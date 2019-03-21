@@ -3,10 +3,15 @@ using System.Collections.Generic;
 
 namespace MyClassLibraryC
 {
+
+
     public class clsBookC
     {
         //private data member for list
         List<clsBook> mBookList = new List<clsBook>();
+
+        //private data memebr thisBook
+        clsBook mThisBook = new clsBook();
 
         //private data member for the BookId property 
         private Int32 mBookId;
@@ -25,8 +30,8 @@ namespace MyClassLibraryC
 
         //private data member for the BookReleaseDate property 
         private DateTime mBookReleaseDate;
-        
-        
+
+
 
 
         //public property for BookId
@@ -60,6 +65,9 @@ namespace MyClassLibraryC
             }
         }
 
+       
+        
+
 
         //public property for BookCategeory
         public string BookCategeory
@@ -74,6 +82,16 @@ namespace MyClassLibraryC
                 //set the private data	
                 mBookCategeory = value;
             }
+        }
+
+        public void Add()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update()
+        {
+            throw new NotImplementedException();
         }
 
 
@@ -138,7 +156,7 @@ namespace MyClassLibraryC
         }
         //public property for Count
         public int Count
-        { 
+        {
             get
             {
                 //return the countt of list
@@ -146,24 +164,58 @@ namespace MyClassLibraryC
             }
             set
             {
-               //we shall worry aboiyt this later 
+                //we shall worry aboiyt this later 
             }
         }
 
-        public clsBook ThisBook { get; set; }
-        
-    }
-
+        public clsBook ThisBook
+        {
+            get
+            {
+                return mThisBook;
+            }
+            set
+            {
+                mThisBook = value;
+            }
+        }
     public class clsBook
-    {
+        {
+            public DateTime txtbookrd;
+
+            public clsBook ThisBook { get; set; }
+            public int Count { get; set; }
+            public string BookCategeory { get; set; }
+            public string AuthorName { get; set; }
+            public string BookPublisher { get; set; }
+            public DateTime BookReleaseDate { get; set; }
+            public string Booktitle { get; set; }
+            public string BookId { get; set; }
+
+            public string Valid(string text1, string text2, string text3, string text4, string text5)
+            {
+                throw new NotImplementedException();
+            }
+
+            public bool Find(int primaryKey)
+            {
+                throw new NotImplementedException();
+            }
+
+           
+        }
+
        
-        public clsBook ThisBook { get; set; }
-        public int Count { get; set; }
-        public string BookCategeory { get; set; }
-        public string AuthorName { get; set; }
-        public string BookPublisher { get; set; }
-        public DateTime BookReleaseDate { get; set; }
-        public string Booktitle { get; set; }
-        public string BookId { get; set; }
+        private int Execute(string v)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void AddParameter(string v, string authorName)
+        {
+            throw new NotImplementedException();
+        }
+
+        
     }
 }

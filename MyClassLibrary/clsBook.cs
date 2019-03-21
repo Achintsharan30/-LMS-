@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using MyClassLibraryC;
+using MyClassLibrary;
 
 namespace MyClassLibrary
 {
@@ -29,8 +31,9 @@ namespace MyClassLibrary
 
 
 
+        clsDataConnection mThisBook = new clsDataConnection();
 
-
+        
         //public property for BookId
         public int BookId
         {
@@ -42,7 +45,7 @@ namespace MyClassLibrary
             set
             {
                 //set the private data	
-                mBookId = value;
+                BookId = value;
             }
         }
 
@@ -126,7 +129,8 @@ namespace MyClassLibrary
         }
 
         public object DataTable { get; private set; }
-
+        public int Count { get; set; }
+        
         public bool Find(int BookId)
 
         {
@@ -246,8 +250,50 @@ namespace MyClassLibrary
             //return any error message
             return Error;
         }
+
+        public void Delete()
+        {
+            //detele the record pointed by thisbook
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameter for the stored p
+            DB.AddParameter("@BookId", mThisBook.BookId);
+            //exexute the scored 
+            DB.Execute("sproc_tblBook_Delete");
+        }
+
+       public void add()
+            {
+                //add new record to the database
+                //connect to teh database
+                clsDataConnection DB = new clsDataConnection();
+        //set the parameter forr store procedure
+        DB.AddParameter("@AuthorName", mThisBook.AuthorName);
+                DB.AddParameter("@BookCategeory", mThisBook.BookCategeory);
+                DB.AddParameter("@BookPublisher", mThisBook.BookPublisher);
+                DB.AddParameter("@BookReleaseDate", mThisBook.BookReleaseDate);
+                DB.AddParameter("@Booktitle", mThisBook.Booktitle);
+                //execute the query return the primary key 
+                 DB.Execute("sproc_tblBook_Add");
+            }
+        public void Update()
+        {
+            //add new record to the database
+            //connect to teh database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameter forr store procedure
+            DB.AddParameter("@AuthorName", mThisBook.AuthorName);
+            DB.AddParameter("@BookCategeory", mThisBook.BookCategeory);
+            DB.AddParameter("@BookPublisher", mThisBook.BookPublisher);
+            DB.AddParameter("@BookReleaseDate", mThisBook.BookReleaseDate);
+            DB.AddParameter("@Booktitle", mThisBook.Booktitle);
+            //execute the query return the primary key  
+            DB.Execute("sproc_tblBook_Update");
+        }
+
     }
 }
+
 
 
  

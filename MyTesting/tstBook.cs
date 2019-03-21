@@ -285,7 +285,7 @@ namespace MyTesting
             //create some test data to pass to the method 
             string AuthorName = "a"; //this should be ok 
                                      //invoke the method 
-            OK = AnBookId.Valid(AuthorName, BookCategeory, BookPublisher, BookReleaseDate, Booktitle);
+            OK = AnBook.Valid(AuthorName, BookCategeory, BookPublisher, BookReleaseDate, Booktitle);
             //test to see that the result is correct 
             Assert.IsTrue(OK);
         }
@@ -302,7 +302,7 @@ namespace MyTesting
             //create some test data to pass to the method 
             string AuthorName = "aa"; //this should be ok 
                                       //invoke the method 
-            OK = AnBookId.Valid(AuthorName, BookCategeory, BookPublisher, BookReleaseDate, Booktitle);
+            OK = AnBook.Valid(AuthorName, BookCategeory, BookPublisher, BookReleaseDate, Booktitle);
             //test to see that the result is correct 
             Assert.IsTrue(OK);
         }
@@ -319,7 +319,7 @@ namespace MyTesting
             //create some test data to pass to the method 
             string AuthorName = "aaaaaaaaaaaaaaaaaaaaaaaa"; //this should be ok 
                                                             //invoke the method 
-            OK = AnBookId.Valid(AuthorName, BookCategeory, BookPublisher, BookReleaseDate, Booktitle);
+            OK = AnBook.Valid(AuthorName, BookCategeory, BookPublisher, BookReleaseDate, Booktitle);
             //test to see that the result is correct 
             Assert.IsTrue(OK);
         }
@@ -336,7 +336,7 @@ namespace MyTesting
             //create some test data to pass to the method 
             string AuthorName = "aaaaaaaaaaaaaaaaaaaaaaaaa"; //this should be ok 
                                                              //invoke the method 
-            OK = AnBookId.Valid(AuthorName, BookCategeory, BookPublisher, BookReleaseDate, Booktitle);
+            OK = AnBook.Valid(AuthorName, BookCategeory, BookPublisher, BookReleaseDate, Booktitle);
             //test to see that the result is correct 
             Assert.IsTrue(OK);
         }
@@ -814,19 +814,6 @@ namespace MyTesting
             Assert.AreNotEqual(Error, "");
         }
 
-        [TestMethod]
-        public void BooktitleMaxPlusOne()
-        {
-            //create an  instance of the class we want to create 
-            clsBook AnBook = new clsBook();
-            //string variable to store any error message 
-            String Error = "";
-            //this should be pass
-            string Booktitle = "aaaaaaaaaaaaaaaaaaaa";
-            //invoke the method 
-            Error = AnBook.Valid(AuthorName, BookCategeory, BookPublisher, BookReleaseDate, Booktitle);
-            //test to see that the result is correct 
-            Assert.AreEqual(Error, "");
+     
         }
     }
-}

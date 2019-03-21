@@ -199,6 +199,7 @@ public class clsDataConnection
         }
     }
 
+    
     public DataTable DataTable
     //public property that provides access to the query results
     {
@@ -213,4 +214,11 @@ public class clsDataConnection
             dataTable = value;
         }
     }
+
+    public object BookCategeory { get; internal set; }
+    public object BookId { get; internal set; }
+    public object AuthorName { get; internal set; }
+    public object BookPublisher { get; internal set; }
+    public object BookReleaseDate { get; internal set; }
+    public object Booktitle { get; internal set; }
 }
