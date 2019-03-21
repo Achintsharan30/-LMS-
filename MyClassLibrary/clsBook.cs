@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using MyClassLibrary;
+using MyClassLibraryC;
 
-namespace MyClassLibrary
+namespace MyClassLibrary 
 {
 
 
@@ -125,8 +127,7 @@ namespace MyClassLibrary
             }
         }
 
-        public object DataTable { get; private set; }
-
+        
         public bool Find(int BookId)
 
         {
@@ -246,8 +247,16 @@ namespace MyClassLibrary
             //return any error message
             return Error;
         }
+
+       
+
+
+
+        
+
     }
-}
+    }
+
 
 
  

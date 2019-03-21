@@ -199,6 +199,7 @@ public class clsDataConnection
         }
     }
 
+    
     public DataTable DataTable
     //public property that provides access to the query results
     {
@@ -213,4 +214,6 @@ public class clsDataConnection
             dataTable = value;
         }
     }
+
+   
 }

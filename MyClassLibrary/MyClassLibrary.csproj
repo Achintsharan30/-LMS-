@@ -44,5 +44,11 @@
     <Compile Include="clsDataConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyClassLibraryC\MyClassLibraryC.csproj">
+      <Project>{8e4c2c32-1f07-47ba-9d9b-f8436f4ae731}</Project>
+      <Name>MyClassLibraryC</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
