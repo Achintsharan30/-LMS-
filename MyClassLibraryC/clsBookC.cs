@@ -69,7 +69,7 @@ namespace MyClassLibraryC
         public void Delete()
         {
             //detele the record pointed by thisbook
-            //connect to the database
+            //connect to the database 
             clsDataConnection DB = new clsDataConnection();
             //set the parameter for the stored p
             DB.AddParameter("@BookId", mThisBook.BookId);
